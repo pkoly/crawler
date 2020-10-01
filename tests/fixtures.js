@@ -6,3 +6,34 @@ exports.htmlSnippet = [
     '<a href="pear.html" title="Pear" />',
     "</div>",
 ].join("");
+
+exports.htmlElements = [
+    {
+        type: "tag",
+        name: "a",
+        attribs: {
+            href: "https://www.apple.com",
+        },
+    },
+    {
+        type: "tag",
+        name: "a",
+        attribs: {
+            href: "orange.html",
+        },
+    },
+    {
+        type: "tag",
+        name: "a",
+        attribs: {
+            href: "pear.html",
+        },
+    },
+    {
+        type: "tag",
+        name: "img",
+        attribs: {
+            src: "banana.png",
+        },
+    },
+];
