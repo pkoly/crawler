@@ -1,0 +1,26 @@
+{
+  "name": "crawler",
+  "version": "0.1.0",
+  "description": "Simple Web Crawler",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "jest --coverage"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pkoly/crawler.git"
+  },
+  "keywords": [
+    "crawler"
+  ],
+  "author": "Panos Kolyvanis",
+  "license": "UNLICENSED",
+  "bugs": {
+    "url": "https://github.com/pkoly/crawler/issues"
+  },
+  "homepage": "https://github.com/pkoly/crawler#readme",
+  "dependencies": {
+    "jest": "^26.4.2"
+  }
+}
