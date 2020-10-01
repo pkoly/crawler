@@ -1,5 +1,6 @@
 const Page = require("./page");
 const Link = require("./link");
+const Sitemap = require("./sitemap");
 
 class Crawler {
     constructor(root, parser) {
@@ -34,7 +35,10 @@ class Crawler {
             queue.shift(); // dequeue parent node
         }
 
-        return pages;
+        const sitemap = new Sitemap(pages).json;
+
+        console.log(JSON.stringify(sitemap, null, 2));
+        return sitemap;
     }
 }
 
