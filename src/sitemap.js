@@ -1,3 +1,5 @@
+const uniq = require('lodash.uniq');
+
 class Sitemap {
     constructor(pages) {
         this.pages = pages;
@@ -8,9 +10,9 @@ class Sitemap {
             return {
                 page: page.url,
                 links: {
-                    internals: page.internalLinks.map((link) => link.url),
-                    externals: page.externalLinks.map((link) => link.url),
-                    content: page.contentLinks.map((link) => link.url),
+                    internals: uniq(page.internalLinks.map(link => link.url)).sort(),
+                    externals: uniq(page.externalLinks.map((link) => link.url)).sort(),
+                    content: uniq(page.contentLinks.map((link) => link.url)).sort(),
                 },
             };
         });
