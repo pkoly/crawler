@@ -1,5 +1,7 @@
 const cheerio = require("cheerio");
 
+const utils = require("./utils");
+
 class Parser {
     /**
      * Initialises class with configuration details
@@ -36,7 +38,9 @@ class Parser {
             const $ = await parseHtml(content);
 
             for (const tag of this.config.tags) {
-                const elements = find($, tag);
+                const elements = find($, tag).map((element) =>
+                    utils.pick(element, ["type", "name", "attribs"])
+                );
                 result.push.apply(result, elements);
             }
         } catch (e) {
