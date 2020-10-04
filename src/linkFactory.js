@@ -7,13 +7,12 @@ const isPageLink = (element) =>
     !element.attribs.href.startsWith("#") &&
     !element.attribs.href.startsWith("mailto:");
 
-const isExternalLink = (root, element) =>
-    element.attribs.href.startsWith("http") &&
-    !element.attribs.href.startsWith(root);
+const isExternalUrl = (root, url) =>
+    url.startsWith("http") &&
+    !url.startsWith(root);
 
-const isExternalContent = (root, element) =>
-    element.attribs.src.startsWith("http") &&
-    !element.attribs.src.startsWith(root);
+const isExternalLink = (root, element) => isExternalUrl(root, element.attribs.href);
+const isExternalContent = (root, element) => isExternalUrl(root, element.attribs.src);
 
 const isContent = (element) =>
     element.type === "tag" &&
@@ -21,11 +20,8 @@ const isContent = (element) =>
     element.attribs &&
     element.attribs.src;
 
-const removeLastForwardSlash = (href) =>
-    href.startsWith("/") ? href.substring(1) : href;
-
-const prependRoot = (root, href) =>
-    href.startsWith(root) ? href : `${root}${href}`;
+const removeLastForwardSlash = (url) => url.startsWith("/") ? url.substring(1) : url;
+const prependRoot = (root, url) => url.startsWith(root) ? url : `${root}${url}`;
 
 class LinkFactory {
     constructor(root, elements) {
