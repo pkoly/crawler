@@ -38,4 +38,5 @@ npm test
 - [ ] Improve LinkFactory filtering and url transformation functions
   - [ ] e.g. Transform relative paths (../img/foo.png to absolute urls)
 - [ ] Comply with target's robots.txt rules
+- [ ] Introduce delay before fetching a url's content 
 - [ ] Implement Depth-first search (DFS) and compare performance

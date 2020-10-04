@@ -18,3 +18,7 @@ test("has external links", () => {
 test("has content links", () => {
     expect(testPage.contentLinks.length).toBe(1);
 });
+
+test("internal content links are absolute urls", () => {
+    expect(testPage.contentLinks[0].url.startsWith('https://www.example.com/')).toBe(true);
+});
