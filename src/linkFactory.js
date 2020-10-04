@@ -46,7 +46,7 @@ class LinkFactory {
                 }
             } else if (isContent(element)) {
                 let url = element.attribs.src;
-                if (isExternalContent(this.root, element)) {
+                if (!isExternalContent(this.root, element)) {
                     const src = removeLastForwardSlash(url);
                     url = prependRoot(this.root, src);
                 }
