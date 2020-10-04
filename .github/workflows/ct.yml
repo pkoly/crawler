@@ -1,4 +1,4 @@
-name: Contiuous Testing Workflow
+name: Continuous Testing Workflow
 
 on:
   pull_request:
